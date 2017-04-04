@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">WineYardApp</string>
+    <string name="title_activity_details_emplacement">DetailsEmplacement</string>
+    <string name="title_activity_emplacement_details">EmplacementDetails</string>
+    <string name="large_text">
+        "TEST"
+    </string>
+    <string name="action_settings">Settings</string>
 </resources>
