@@ -27,4 +27,5 @@ public class EmplacementDetails extends AppCompatActivity {
         });
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
+    /*test*/
 }
