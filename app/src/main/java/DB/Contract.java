@@ -13,7 +13,7 @@ public final class Contract {
 
         public Contract(){
             //empty constructor
-            //should never be instantiated
+            //should never be instantiatedasdad
         }
 
         //Represents the rows of a table
