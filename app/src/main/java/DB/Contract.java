@@ -13,7 +13,7 @@ public final class Contract {
 
         public Contract(){
             //empty constructor
-            //should never be instantiatedasdad
+            //should never be instantiate
         }
 
         //Represents the rows of a table
@@ -119,7 +119,7 @@ public final class Contract {
     }
 
 
-    //Table de conneion
+    //Table de connection
         //Represents the rows of a table
         public static abstract class PersonRecordEntry implements BaseColumns {
             //Table name

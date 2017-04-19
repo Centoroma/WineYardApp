@@ -10,7 +10,6 @@ import java.util.List;
 
 import DB.Contract;
 import DB.Object.WineLot;
-import DB.Object.WineLot;
 import DB.SQLhelper;
 
 /**

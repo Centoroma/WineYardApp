@@ -4,29 +4,27 @@
 
 
 
-
-    <!-- TODO Extract text to string.xml -->
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_location"
             android:icon="@drawable/ic_menu_place"
-            android:title="Location" />
+            android:title="@string/location" />
         <item
             android:id="@+id/nav_work"
             android:icon="@drawable/ic_menu_work"
-            android:title="Works" />
+            android:title="@string/works" />
         <item
             android:id="@+id/nav_employee"
             android:icon="@drawable/ic_menu_people"
-            android:title="Employees" />
+            android:title="@string/employee" />
     </group>
 
-    <item android:title="Miscellaneous">
+    <item android:title="@string/miscellaneous">
         <menu>
             <item
                 android:id="@+id/nav_setting"
                 android:icon="@drawable/ic_menu_setting"
-                android:title="Settings" />
+                android:title="@string/settings" />
         </menu>
     </item>
 </menu>
