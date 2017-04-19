@@ -67,8 +67,8 @@ public final class Contract {
         //Record Column names
         public static final String KEY_ID = "id";
         public static final String KEY_NAME= "name";
-        public static final float KEY_SURFACE = 0f ;
-        public static final int KEY_NUMWINESTOCK= 0 ;
+        public static final String KEY_SURFACE = "surface" ;
+        public static final String KEY_NUMWINESTOCK= "numWineStock" ;
         public static final String KEY_PICTURE= "picture";
 
 

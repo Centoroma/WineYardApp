@@ -9,7 +9,7 @@ public class WineLot {
     private int id;
     private String name ;
     private float surface;
-    private int numberWineStock;
+    private Integer numberWineStock;
     private String picture;
 
     public int getId() {
