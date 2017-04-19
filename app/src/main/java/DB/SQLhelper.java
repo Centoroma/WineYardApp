@@ -15,7 +15,7 @@ public class SQLhelper extends SQLiteOpenHelper{
      */
         private SQLiteDatabase db;
 
-        //Infos about database
+        //Info about database
         private static final String DATABASE_NAME = "survey.db";
         private static final int DATABASE_VERSION = 1;
         private static SQLhelper instance;

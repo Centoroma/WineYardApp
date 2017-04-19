@@ -1,6 +1,7 @@
 package com.example.cento.wineyardapp;
 
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
@@ -29,8 +30,7 @@ public class MainActivity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        //TODO extract text
-        setTitle("Location");
+        setTitle(getString(R.string.location));
         fm = getSupportFragmentManager();
         ft = fm.beginTransaction();
 
@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
-        drawer.setDrawerListener(toggle);
+        drawer.addDrawerListener(toggle);
         toggle.syncState();
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
@@ -81,29 +81,28 @@ public class MainActivity extends AppCompatActivity
 
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
-    public boolean onNavigationItemSelected(MenuItem item) {
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
         fm = getSupportFragmentManager();
         ft = fm.beginTransaction();
 
-        //TODO extract text
         switch (id){
             case (R.id.nav_location):
-                this.setTitle("Location");
+                this.setTitle(R.string.location);
                 ft.replace(R.id.content_layout, new FragLocation()).commit();
                 break;
             case (R.id.nav_work):
-                this.setTitle("Works");
+                this.setTitle(getString(R.string.works));
                 ft.replace(R.id.content_layout, new FragWork()).commit();
                 break;
             case (R.id.nav_employee):
-                this.setTitle("Employee");
+                this.setTitle(getString(R.string.employee));
                 ft.replace(R.id.content_layout, new FragEmployee()).commit();
                 break;
             case (R.id.nav_setting):
-                this.setTitle("Settings");
+                this.setTitle(getString(R.string.settings));
                 ft.replace(R.id.content_layout, new FragSettings()).commit();
                 break;
         }

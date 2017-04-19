@@ -12,8 +12,6 @@ import DB.Contract;
 import DB.Object.Orientation;
 import DB.SQLhelper;
 
-import static android.R.attr.orientation;
-
 /**
  * Created by Cento on 19.04.2017.
  */
