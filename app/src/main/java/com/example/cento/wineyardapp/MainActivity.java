@@ -18,16 +18,14 @@ import com.bof.navigationdrawerwineyard.R;
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
-
     private FragmentManager fm;
     private FragmentTransaction ft;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbarAppBar);
         setSupportActionBar(toolbar);
 
         setTitle(getString(R.string.location));
@@ -47,6 +45,7 @@ public class MainActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
 
     }
+
 
     @Override
     public void onBackPressed() {
