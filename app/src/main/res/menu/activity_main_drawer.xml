@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+
+
+    <!-- TODO Extract text to string.xml -->
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_location"
+            android:icon="@drawable/ic_menu_place"
+            android:title="Location" />
+        <item
+            android:id="@+id/nav_work"
+            android:icon="@drawable/ic_menu_work"
+            android:title="Works" />
+        <item
+            android:id="@+id/nav_employee"
+            android:icon="@drawable/ic_menu_people"
+            android:title="Employees" />
+    </group>
+
+    <item android:title="Miscellaneous">
+        <menu>
+            <item
+                android:id="@+id/nav_setting"
+                android:icon="@drawable/ic_menu_setting"
+                android:title="Settings" />
+        </menu>
+    </item>
+</menu>
