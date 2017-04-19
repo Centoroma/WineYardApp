@@ -37,6 +37,8 @@ public class WineLotDataSource {
         values.put(Contract.WineLotEntry.KEY_PICTURE, wineLot.getPicture());
         values.put(Contract.WineLotEntry.KEY_NUMWINESTOCK, wineLot.getNumberWineStock());
         values.put(Contract.WineLotEntry.KEY_SURFACE, wineLot.getSurface());
+        values.put(Contract.WineLotEntry.KEY_WINEVARIETY_ID, wineLot.getWineVarietyId());
+        values.put(Contract.WineLotEntry.KEY_ORIENTATION_ID, wineLot.getOrientationId());
         id = this.db.insert(Contract.WineLotEntry.TABLE_WINELOT, null, values);
         return id;
     }
@@ -59,6 +61,8 @@ public class WineLotDataSource {
         wineLot.setPicture(cursor.getString(cursor.getColumnIndex(Contract.WineLotEntry.KEY_PICTURE)));
         wineLot.setNumberWineStock(cursor.getInt(cursor.getColumnIndex(Contract.WineLotEntry.KEY_NUMWINESTOCK)));
         wineLot.setSurface(cursor.getFloat(cursor.getColumnIndex(Contract.WineLotEntry.KEY_SURFACE)));
+        wineLot.setWineVarietyId(cursor.getInt(cursor.getColumnIndex(Contract.WineLotEntry.KEY_WINEVARIETY_ID)));
+        wineLot.setOrientationId(cursor.getInt(cursor.getColumnIndex(Contract.WineLotEntry.KEY_ORIENTATION_ID)));
 
         return wineLot;
     }
@@ -80,6 +84,8 @@ public class WineLotDataSource {
                 wineLot.setPicture(cursor.getString(cursor.getColumnIndex(Contract.WineLotEntry.KEY_PICTURE)));
                 wineLot.setNumberWineStock(cursor.getInt(cursor.getColumnIndex(Contract.WineLotEntry.KEY_NUMWINESTOCK)));
                 wineLot.setSurface(cursor.getFloat(cursor.getColumnIndex(Contract.WineLotEntry.KEY_SURFACE)));
+                wineLot.setWineVarietyId(cursor.getInt(cursor.getColumnIndex(Contract.WineLotEntry.KEY_WINEVARIETY_ID)));
+                wineLot.setOrientationId(cursor.getInt(cursor.getColumnIndex(Contract.WineLotEntry.KEY_ORIENTATION_ID)));
 
                 WineLots.add(wineLot);
             } while(cursor.moveToNext());
@@ -97,6 +103,8 @@ public class WineLotDataSource {
         values.put(Contract.WineLotEntry.KEY_PICTURE, wineLot.getPicture());
         values.put(Contract.WineLotEntry.KEY_NUMWINESTOCK, wineLot.getNumberWineStock());
         values.put(Contract.WineLotEntry.KEY_SURFACE, wineLot.getSurface());
+        values.put(Contract.WineLotEntry.KEY_WINEVARIETY_ID, wineLot.getWineVarietyId());
+        values.put(Contract.WineLotEntry.KEY_ORIENTATION_ID, wineLot.getOrientationId());
 
         return this.db.update(Contract.WineLotEntry.TABLE_WINELOT, values, Contract.WineLotEntry.KEY_ID + " = ?",
                 new String[] { String.valueOf(wineLot.getId()) });

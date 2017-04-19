@@ -34,6 +34,8 @@ public class JobDataSource {
         ContentValues values = new ContentValues();
         values.put(Contract.JobEntry.KEY_DESCRIPTION, job.getDescription());
         values.put(Contract.JobEntry.KEY_DEADLINE, job.getDeadline());
+        values.put(Contract.JobEntry.KEY_WINELOT_ID, job.getWinelotId());
+        values.put(Contract.JobEntry.KEY_WORKER_ID, job.getWorkerId());
         id = this.db.insert(Contract.JobEntry.TABLE_JOB, null, values);
         return id;
     }
@@ -55,6 +57,8 @@ public class JobDataSource {
         job.setId(cursor.getInt(cursor.getColumnIndex(Contract.JobEntry.KEY_ID)));
         job.setDescription(cursor.getString(cursor.getColumnIndex(Contract.JobEntry.KEY_DESCRIPTION)));
         job.setDeadline(cursor.getString(cursor.getColumnIndex(Contract.JobEntry.KEY_DEADLINE)));
+        job.setWinelotId(cursor.getInt(cursor.getColumnIndex(Contract.JobEntry.KEY_WINELOT_ID)));
+        job.setWorkerId(cursor.getInt(cursor.getColumnIndex(Contract.JobEntry.KEY_WORKER_ID)));
 
         return job;
     }
@@ -74,6 +78,8 @@ public class JobDataSource {
                 job.setId(cursor.getInt(cursor.getColumnIndex(Contract.JobEntry.KEY_ID)));
                 job.setDescription(cursor.getString(cursor.getColumnIndex(Contract.JobEntry.KEY_DESCRIPTION)));
                 job.setDeadline(cursor.getString(cursor.getColumnIndex(Contract.JobEntry.KEY_DEADLINE)));
+                job.setWinelotId(cursor.getInt(cursor.getColumnIndex(Contract.JobEntry.KEY_WINELOT_ID)));
+                job.setWorkerId(cursor.getInt(cursor.getColumnIndex(Contract.JobEntry.KEY_WORKER_ID)));
 
                 jobs.add(job);
             } while(cursor.moveToNext());
@@ -89,6 +95,8 @@ public class JobDataSource {
         ContentValues values = new ContentValues();
         values.put(Contract.JobEntry.KEY_DESCRIPTION, job.getDescription());
         values.put(Contract.JobEntry.KEY_DEADLINE, job.getDeadline());
+        values.put(Contract.JobEntry.KEY_WINELOT_ID, job.getWinelotId());
+        values.put(Contract.JobEntry.KEY_WORKER_ID, job.getWorkerId());
 
         return this.db.update(Contract.JobEntry.TABLE_JOB, values, Contract.JobEntry.KEY_ID + " = ?",
                 new String[] { String.valueOf(job.getId()) });

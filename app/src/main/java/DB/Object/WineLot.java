@@ -9,8 +9,26 @@ public class WineLot {
     private int id;
     private String name ;
     private float surface;
-    private Integer numberWineStock;
+    private int numberWineStock;
     private String picture;
+    private int wineVarietyId;
+    private int orientationId;
+
+    public int getWineVarietyId() {
+        return wineVarietyId;
+    }
+
+    public void setWineVarietyId(int wineVarietyId) {
+        this.wineVarietyId = wineVarietyId;
+    }
+
+    public int getOrientationId() {
+        return orientationId;
+    }
+
+    public void setOrientationId(int orientationId) {
+        this.orientationId = orientationId;
+    }
 
     public int getId() {
         return id;

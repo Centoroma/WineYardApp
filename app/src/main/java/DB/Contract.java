@@ -2,8 +2,12 @@ package DB;
 
 import android.provider.BaseColumns;
 
+import static DB.Contract.JobEntry.KEY_WINELOT_ID;
+import static DB.Contract.JobEntry.KEY_WORKER_ID;
 import static DB.Contract.JobEntry.TABLE_JOB;
 import static DB.Contract.WineVarietyEntry.TABLE_WINEVARIETY;
+import static android.R.attr.key;
+import static android.provider.Contacts.SettingsColumns.KEY;
 
 /**
  * Created by Cento on 11.04.2017.
@@ -13,7 +17,7 @@ public final class Contract {
 
         public Contract(){
             //empty constructor
-            //should never be instantiatedasdad
+            //should never be instantiate
         }
 
         //Represents the rows of a table
@@ -49,14 +53,18 @@ public final class Contract {
             public static final String KEY_ID = "id";
             public static final String KEY_DESCRIPTION = "description";
             public static final String KEY_DEADLINE= "deadline";
+            public static final String KEY_WINELOT_ID = "winelot_id";
+            public static final String KEY_WORKER_ID = "worker_id";
 
 
             //Table record create statement
             public static final String CREATE_TABLE_JOB = "CREATE TABLE "
                     + TABLE_JOB + "("
                     + JobEntry.KEY_ID + " INTEGER PRIMARY KEY,"
-                    + JobEntry.KEY_DESCRIPTION + " DATETIME, "
+                    + JobEntry.KEY_DESCRIPTION + " TEXT, "
                     + JobEntry.KEY_DEADLINE + " TEXT, "
+                    + "FOREIGN KEY (" + KEY_WINELOT_ID +") REFERENCES " + WineLotEntry.TABLE_WINELOT+ " (" + KEY_ID + "), "
+                    + "FOREIGN KEY (" + KEY_WORKER_ID +") REFERENCES " + WorkerEntry.TABLE_WORKER+ " (" + KEY_ID + "), "
                     + ");";
         }
 
@@ -70,6 +78,8 @@ public final class Contract {
         public static final String KEY_SURFACE = "surface" ;
         public static final String KEY_NUMWINESTOCK= "numWineStock" ;
         public static final String KEY_PICTURE= "picture";
+        public static final String KEY_WINEVARIETY_ID = "winevariety id";
+        public static final String KEY_ORIENTATION_ID = "ORIENTATION id";
 
 
 
@@ -81,6 +91,8 @@ public final class Contract {
                 + WineLotEntry.KEY_SURFACE + " TEXT, "
                 + WineLotEntry.KEY_NUMWINESTOCK + " TEXT, "
                 + WineLotEntry.KEY_PICTURE + " TEXT, "
+                + "FOREIGN KEY (" + KEY_WINEVARIETY_ID +") REFERENCES " + WineVarietyEntry.TABLE_WINEVARIETY+ " (" + KEY_ID + "), "
+                + "FOREIGN KEY (" + KEY_ORIENTATION_ID +") REFERENCES " + OrientationEntry.TABLE_ORIENTATION+ " (" + KEY_ID + "), "
                 + ");";
     }
 
@@ -117,27 +129,4 @@ public final class Contract {
                 + WineVarietyEntry.KEY_NAME + " TEXT, "
                 + ");";
     }
-
-
-    //Table de conneion
-        //Represents the rows of a table
-        public static abstract class PersonRecordEntry implements BaseColumns {
-            //Table name
-            public static final String TABLE_PERSON_RECORD = "person_record";
-
-            //Table person_record Column names
-            public static final String KEY_ID = "id";
-            public static final String KEY_PERSON_ID = "person_id";
-            public static final String KEY_RECORD_ID = "record_id";
-
-            //Table person_record create statement
-            public static final String CREATE_TABLE_PERSON_RECORD = "CREATE TABLE "
-                    + TABLE_PERSON_RECORD + "("
-                    + PersonRecordEntry.KEY_ID + " INTEGER PRIMARY KEY,"
-                    + PersonRecordEntry.KEY_PERSON_ID + " INTEGER, "
-                    + PersonRecordEntry.KEY_RECORD_ID + " INTEGER, "
-                    + "FOREIGN KEY (" + KEY_PERSON_ID + ") REFERENCES " + WineLotEntry.TABLE_WINELOT+ " (" + KEY_ID + "), "
-                    + "FOREIGN KEY (" + KEY_RECORD_ID + ") REFERENCES " + OrientationEntry.TABLE_ORIENTATION + " (" + KEY_ID +") "
-                    + ");";
-        }
 }
