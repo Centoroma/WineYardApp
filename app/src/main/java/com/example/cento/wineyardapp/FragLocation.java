@@ -7,6 +7,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.bof.navigationdrawerwineyard.R;
+
 /**
  * Created by flavien on 19/04/17.
  */
