@@ -52,7 +52,7 @@ public final class Contract {
 
 
             //Table record create statement
-            public static final String CREATE_TABLE_RECORD = "CREATE TABLE "
+            public static final String CREATE_TABLE_JOB = "CREATE TABLE "
                     + TABLE_JOB + "("
                     + JobEntry.KEY_ID + " INTEGER PRIMARY KEY,"
                     + JobEntry.KEY_DESCRIPTION + " DATETIME, "
@@ -74,7 +74,7 @@ public final class Contract {
 
 
         //Table record create statement
-        public static final String CREATE_TABLE_RECORD = "CREATE TABLE "
+        public static final String CREATE_TABLE_WINELOT = "CREATE TABLE "
                 + TABLE_WINELOT + "("
                 + WineLotEntry.KEY_ID + " INTEGER PRIMARY KEY,"
                 + WineLotEntry.KEY_NAME + " DATETIME, "
@@ -94,7 +94,7 @@ public final class Contract {
 
 
         //Table record create statement
-        public static final String CREATE_TABLE_RECORD = "CREATE TABLE "
+        public static final String CREATE_TABLE_WINEVARIETY = "CREATE TABLE "
                 + TABLE_WINEVARIETY + "("
                 + WineVarietyEntry.KEY_ID + " INTEGER PRIMARY KEY,"
                 + WineVarietyEntry.KEY_NAME + " TEXT, "
@@ -111,7 +111,7 @@ public final class Contract {
 
 
         //Table record create statement
-        public static final String CREATE_TABLE_RECORD = "CREATE TABLE "
+        public static final String CREATE_TABLE_ORIENTATION= "CREATE TABLE "
                 + TABLE_ORIENTATION + "("
                 + WineVarietyEntry.KEY_ID + " INTEGER PRIMARY KEY,"
                 + WineVarietyEntry.KEY_NAME + " TEXT, "
