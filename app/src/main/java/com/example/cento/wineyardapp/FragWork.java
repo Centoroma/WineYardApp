@@ -24,10 +24,10 @@ public class FragWork extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.frag_work,container, false);
 
-        String[] action ={"ABCD",
-                "DEFG",
-                "IJHG",
-                "CULER"};
+        String[] action ={"Deminage",
+                "Forniquage",
+                "Flavienage",
+                "Centage"};
 
         ListView listView = (ListView)view.findViewById(R.id.listofwork);
 
