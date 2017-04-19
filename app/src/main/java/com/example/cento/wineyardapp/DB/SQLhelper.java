@@ -1,4 +1,4 @@
-package DB;
+package com.example.cento.wineyardapp.DB;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;

@@ -1,4 +1,4 @@
-package DB.Object;
+package com.example.cento.wineyardapp.DB.Object;
 
 /**
  * Created by Cento on 19.04.2017.

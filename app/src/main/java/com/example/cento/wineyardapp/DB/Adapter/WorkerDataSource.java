@@ -1,4 +1,4 @@
-package DB.Adapter;
+package com.example.cento.wineyardapp.DB.Adapter;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -8,9 +8,9 @@ import android.database.sqlite.SQLiteDatabase;
 import java.util.ArrayList;
 import java.util.List;
 
-import DB.Contract;
-import DB.Object.Worker;
-import DB.SQLhelper;
+import com.example.cento.wineyardapp.DB.Contract;
+import com.example.cento.wineyardapp.DB.Object.Worker;
+import com.example.cento.wineyardapp.DB.SQLhelper;
 
 /**
  * Created by Cento on 19.04.2017.

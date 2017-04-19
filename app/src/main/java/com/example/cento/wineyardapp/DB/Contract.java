@@ -1,13 +1,6 @@
-package DB;
+package com.example.cento.wineyardapp.DB;
 
 import android.provider.BaseColumns;
-
-import static DB.Contract.JobEntry.KEY_WINELOT_ID;
-import static DB.Contract.JobEntry.KEY_WORKER_ID;
-import static DB.Contract.JobEntry.TABLE_JOB;
-import static DB.Contract.WineVarietyEntry.TABLE_WINEVARIETY;
-import static android.R.attr.key;
-import static android.provider.Contacts.SettingsColumns.KEY;
 
 /**
  * Created by Cento on 11.04.2017.
