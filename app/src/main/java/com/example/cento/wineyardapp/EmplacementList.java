@@ -1,12 +1,18 @@
 package com.example.cento.wineyardapp;
 
+import android.content.ContentValues;
+import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import DB.Contract;
+import DB.SQLhelper;
+
 import static android.R.attr.id;
+import static android.R.attr.value;
 
 public class EmplacementList extends AppCompatActivity {
 
@@ -32,5 +38,7 @@ public class EmplacementList extends AppCompatActivity {
                 return super.onOptionsItemSelected(item);
         }
     }
+
+
 
 }
