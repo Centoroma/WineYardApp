@@ -22,8 +22,4 @@
     <string name="android_studio_android_com">android.studio@android.com</string>
     <string name="map">Map</string>
     <string name="contact_image">Contact image</string>
-    <string name="title_activity_employee_details">EmployeeDetails</string>
-    <string name="name">name</string>
-    <string name="phone">phone</string>
-    <string name="mail">mail</string>
 </resources>
