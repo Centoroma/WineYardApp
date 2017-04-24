@@ -28,11 +28,11 @@ public class MainActivity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbarAppBar);
         setSupportActionBar(toolbar);
 
-        setTitle(getString(R.string.location));
         fm = getSupportFragmentManager();
         ft = fm.beginTransaction();
 
-        ft.replace(R.id.content_layout, new FragLocation()).commit();
+        this.setTitle(R.string.location);
+        ft.replace(R.id.content_layout, new FragLocationList()).commit();
 
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -43,7 +43,6 @@ public class MainActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
-
     }
 
 
@@ -90,11 +89,12 @@ public class MainActivity extends AppCompatActivity
 
         switch (id){
             case (R.id.nav_map):
+                this.setTitle(R.string.map);
                 ft.replace(R.id.content_layout, new FragLocationMap()).commit();
                 break;
             case (R.id.nav_location):
                 this.setTitle(R.string.location);
-                ft.replace(R.id.content_layout, new FragLocation()).commit();
+                ft.replace(R.id.content_layout, new FragLocationList()).commit();
                 break;
             case (R.id.nav_work):
                 this.setTitle(getString(R.string.works));
