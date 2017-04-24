@@ -23,15 +23,23 @@
             </intent-filter>
         </activity>
         <activity
+<<<<<<< Updated upstream
             android:name="com.example.cento.wineyardapp.EmployeeDetails"
             android:label="@string/title_activity_employee_details"
+=======
+            android:name="com.example.cento.wineyardapp.DetailLocation"
+            android:label="@string/title_activity_detail_location"
+>>>>>>> Stashed changes
             android:parentActivityName="com.example.cento.wineyardapp.MainActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.cento.wineyardapp.MainActivity" />
         </activity>
+<<<<<<< Updated upstream
         <activity android:name="com.example.cento.wineyardapp.WorkDetails"></activity>
+=======
+>>>>>>> Stashed changes
     </application>
 
 </manifest>
