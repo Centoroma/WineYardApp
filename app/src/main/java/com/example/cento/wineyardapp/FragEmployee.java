@@ -16,7 +16,7 @@ import com.bof.navigationdrawerwineyard.R;
  * Created by flavien on 19/04/17.
  */
 
-public class FragEmployee extends Fragment {
+public class FragEmployee extends Fragment{
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {

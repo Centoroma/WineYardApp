@@ -45,20 +45,28 @@ public class FragWork extends Fragment {
         Job job1 = new Job();
         job1.setId(1);
         job1.setWorker(worker);
-        job1.setDescription("Deminage");
+        job1.setDescription("Taille");
         job1.setDeadline("28.12.2017");
         job1.setWinelotId(1);
 
         Job job2 = new Job();
         job2.setId(2);
         job2.setWorker(worker);
-        job2.setDescription("Fait la vigne");
+        job2.setDescription("Coupe");
         job2.setDeadline("28.12.2017");
         job2.setWinelotId(1);
+
+        Job job3 = new Job();
+        job3.setId(3);
+        job3.setWorker(worker);
+        job3.setDescription("Désherbage");
+        job3.setDeadline("28.12.2017");
+        job3.setWinelotId(1);
 
         List<Job> jobs = new ArrayList<>();
         jobs.add(job1);
         jobs.add(job2);
+        jobs.add(job3);
 
         ListView listView = (ListView)view.findViewById(R.id.listofwork);
 

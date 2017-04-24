@@ -6,17 +6,17 @@ package com.example.cento.wineyardapp.DB.Object;
 
 public class Job {
     private int id;
-    private int winelotId;
+    private WineLot winelot;
     private Worker worker;
     private String description;
     private String deadline;
 
-    public int getWinelotId() {
-        return winelotId;
+    public WineLot getWinelot() {
+        return winelot;
     }
 
-    public void setWinelotId(int winelotId) {
-        this.winelotId = winelotId;
+    public void setWinelot(WineLot winelotId) {
+        this.winelot = winelotId;
     }
 
     public Worker getWorker() {
