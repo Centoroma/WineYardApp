@@ -17,13 +17,11 @@ import com.example.cento.wineyardapp.DB.SQLhelper;
  */
 
 public class WineVarietyDataSource {
-    private SQLiteDatabase db;
-    private Context context;
+    private final SQLiteDatabase db;
 
     public WineVarietyDataSource(Context context){
         SQLhelper sqliteHelper = SQLhelper.getInstance(context);
         db = sqliteHelper.getWritableDatabase();
-        this.context = context;
     }
 
     /**
@@ -54,14 +52,15 @@ public class WineVarietyDataSource {
         wineVariety.setId(cursor.getInt(cursor.getColumnIndex(Contract.WineVarietyEntry.KEY_ID)));
         wineVariety.setName(cursor.getString(cursor.getColumnIndex(Contract.WineVarietyEntry.KEY_NAME)));
 
+        cursor.close();
         return wineVariety;
     }
 
     /**
-     * Get all WineVarietys
+     * Get all WineVarieties
      */
-    public List<WineVariety> getAllWineVarietys(){
-        List<WineVariety> wineVarietys = new ArrayList<WineVariety>();
+    public List<WineVariety> getAllWineVarieties(){
+        List<WineVariety> wineVarieties = new ArrayList<>();
         String sql = "SELECT * FROM " + Contract.WineVarietyEntry.TABLE_WINEVARIETY + " ORDER BY " + Contract.WineVarietyEntry.KEY_NAME;
 
         Cursor cursor = this.db.rawQuery(sql, null);
@@ -72,11 +71,12 @@ public class WineVarietyDataSource {
                 wineVariety.setId(cursor.getInt(cursor.getColumnIndex(Contract.WineVarietyEntry.KEY_ID)));
                 wineVariety.setName(cursor.getString(cursor.getColumnIndex(Contract.WineVarietyEntry.KEY_NAME)));
 
-                wineVarietys.add(wineVariety);
+                wineVarieties.add(wineVariety);
             } while(cursor.moveToNext());
         }
 
-        return wineVarietys;
+        cursor.close();
+        return wineVarieties;
     }
 
     /**
@@ -91,7 +91,6 @@ public class WineVarietyDataSource {
     }
 
     /**
-     * TODO
      * Delete a WineVariety - this will also delete all his WineVariety ?????
      * for the WineVariety
      */

@@ -89,6 +89,9 @@ public class MainActivity extends AppCompatActivity
         ft = fm.beginTransaction();
 
         switch (id){
+            case (R.id.nav_map):
+                ft.replace(R.id.content_layout, new FragLocationMap()).commit();
+                break;
             case (R.id.nav_location):
                 this.setTitle(R.string.location);
                 ft.replace(R.id.content_layout, new FragLocation()).commit();

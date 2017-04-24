@@ -17,13 +17,11 @@ import com.example.cento.wineyardapp.DB.SQLhelper;
  */
 
 public class WineLotDataSource {
-    private SQLiteDatabase db;
-    private Context context;
+    private final SQLiteDatabase db;
 
     public WineLotDataSource(Context context){
         SQLhelper sqliteHelper = SQLhelper.getInstance(context);
         db = sqliteHelper.getWritableDatabase();
-        this.context = context;
     }
 
     /**
@@ -63,6 +61,7 @@ public class WineLotDataSource {
         wineLot.setWineVarietyId(cursor.getInt(cursor.getColumnIndex(Contract.WineLotEntry.KEY_WINEVARIETY_ID)));
         wineLot.setOrientationId(cursor.getInt(cursor.getColumnIndex(Contract.WineLotEntry.KEY_ORIENTATION_ID)));
 
+        cursor.close();
         return wineLot;
     }
 
@@ -70,7 +69,7 @@ public class WineLotDataSource {
      * Get all WineLots
      */
     public List<WineLot> getAllWineLots(){
-        List<WineLot> WineLots = new ArrayList<WineLot>();
+        List<WineLot> WineLots = new ArrayList<>();
         String sql = "SELECT * FROM " + Contract.WineLotEntry.TABLE_WINELOT + " ORDER BY " + Contract.WineLotEntry.KEY_NAME;
 
         Cursor cursor = this.db.rawQuery(sql, null);
@@ -90,6 +89,7 @@ public class WineLotDataSource {
             } while(cursor.moveToNext());
         }
 
+        cursor.close();
         return WineLots;
     }
 
@@ -110,7 +110,6 @@ public class WineLotDataSource {
     }
 
     /**
-     * TODO
      * Delete a WineLot - this will also delete all his WineLot ?????
      * for the WineLot
      */

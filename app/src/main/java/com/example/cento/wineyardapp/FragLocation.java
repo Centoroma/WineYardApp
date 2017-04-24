@@ -26,10 +26,6 @@ public class FragLocation extends Fragment{
 
     private View view;
 
-    private Toolbar toolbar;
-    private TabLayout tabLayout;
-    private ViewPager viewPager;
-
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -56,15 +52,15 @@ public class FragLocation extends Fragment{
 
     private void initiateTabs(View view){
 
-        toolbar = (Toolbar) view.findViewById(R.id.toolbarAppBar);
+        Toolbar toolbar = (Toolbar) view.findViewById(R.id.toolbarAppBar);
         ((AppCompatActivity)getActivity()).setSupportActionBar(toolbar);
 
-        tabLayout = (TabLayout) view.findViewById(R.id.tabs);
+        TabLayout tabLayout = (TabLayout) view.findViewById(R.id.tabs);
         ((AppCompatActivity)getActivity()).getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        viewPager = (ViewPager) view.findViewById(R.id.viewpager);
+        ViewPager viewPager = (ViewPager) view.findViewById(R.id.viewpager);
         ViewPagerAdapter adapter =
-                new ViewPagerAdapter(((AppCompatActivity)getActivity()).getSupportFragmentManager());
+                new ViewPagerAdapter(getActivity().getSupportFragmentManager());
 
         adapter.addFragment(new FragLocationList(), "List");
         adapter.addFragment(new FragLocationMap(), "Map");

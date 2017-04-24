@@ -17,13 +17,11 @@ import com.example.cento.wineyardapp.DB.SQLhelper;
  */
 
 public class WorkerDataSource {
-    private SQLiteDatabase db;
-    private Context context;
+    private final SQLiteDatabase db;
 
     public WorkerDataSource(Context context){
         SQLhelper sqliteHelper = SQLhelper.getInstance(context);
         db = sqliteHelper.getWritableDatabase();
-        this.context = context;
     }
 
     /**
@@ -60,6 +58,7 @@ public class WorkerDataSource {
         worker.setPhone(cursor.getString(cursor.getColumnIndex(Contract.WorkerEntry.KEY_PHONE)));
         worker.setMail(cursor.getString(cursor.getColumnIndex(Contract.WorkerEntry.KEY_MAIL)));
 
+        cursor.close();
         return worker;
     }
 
@@ -67,7 +66,7 @@ public class WorkerDataSource {
      * Get all Workers
      */
     public List<Worker> getAllWorkers(){
-        List<Worker> workers = new ArrayList<Worker>();
+        List<Worker> workers = new ArrayList<>();
         String sql = "SELECT * FROM " + Contract.WorkerEntry.TABLE_WORKER + " ORDER BY " + Contract.WorkerEntry.KEY_LASTNAME;
 
         Cursor cursor = this.db.rawQuery(sql, null);
@@ -85,6 +84,7 @@ public class WorkerDataSource {
             } while(cursor.moveToNext());
         }
 
+        cursor.close();
         return workers;
     }
 
@@ -103,7 +103,6 @@ public class WorkerDataSource {
     }
 
     /**
-     * TODO
      * Delete a Worker - this will also delete all his job ?????
      * for the worker
      */

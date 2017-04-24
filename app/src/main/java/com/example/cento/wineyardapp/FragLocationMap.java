@@ -23,9 +23,8 @@ public class FragLocationMap extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.frag_location_map, container, false);
 
-        return view;
+        return inflater.inflate(R.layout.frag_location_map, container, false);
 
     }
 }

@@ -17,13 +17,11 @@ import com.example.cento.wineyardapp.DB.SQLhelper;
  */
 
 public class JobDataSource {
-    private SQLiteDatabase db;
-    private Context context;
+    private final SQLiteDatabase db;
 
     public JobDataSource(Context context){
         SQLhelper sqliteHelper = SQLhelper.getInstance(context);
         db = sqliteHelper.getWritableDatabase();
-        this.context = context;
     }
 
     /**
@@ -60,6 +58,7 @@ public class JobDataSource {
         job.setWinelotId(cursor.getInt(cursor.getColumnIndex(Contract.JobEntry.KEY_WINELOT_ID)));
         job.setWorkerId(cursor.getInt(cursor.getColumnIndex(Contract.JobEntry.KEY_WORKER_ID)));
 
+        cursor.close();
         return job;
     }
 
@@ -67,7 +66,7 @@ public class JobDataSource {
      * Get all Jobs
      */
     public List<Job> getAllJobs(){
-        List<Job> jobs = new ArrayList<Job>();
+        List<Job> jobs = new ArrayList<>();
         String sql = "SELECT * FROM " + Contract.JobEntry.TABLE_JOB + " ORDER BY " + Contract.JobEntry.KEY_DEADLINE;
 
         Cursor cursor = this.db.rawQuery(sql, null);
@@ -84,7 +83,7 @@ public class JobDataSource {
                 jobs.add(job);
             } while(cursor.moveToNext());
         }
-
+        cursor.close();
         return jobs;
     }
 

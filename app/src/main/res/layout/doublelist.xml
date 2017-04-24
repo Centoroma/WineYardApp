@@ -8,10 +8,9 @@
         style="@style/Base.TextAppearance.AppCompat.Medium"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
-        android:layout_toRightOf="@id/icon"
         android:paddingBottom="8dp"
         android:paddingLeft="16dp"
+        android:paddingRight="16dp"
         android:paddingTop="8dp"
         android:text="Action" />
 
@@ -20,9 +19,8 @@
         style="@style/Base.TextAppearance.AppCompat.Small"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
-        android:layout_toRightOf="@id/icon"
         android:paddingBottom="8dp"
-        android:paddingLeft="24dp"
+        android:paddingStart="24dp"
+        android:paddingEnd="16dp"
         android:text="description" />
 </LinearLayout>

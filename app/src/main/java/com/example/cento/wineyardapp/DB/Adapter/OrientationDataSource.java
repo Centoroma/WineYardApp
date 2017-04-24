@@ -18,13 +18,11 @@ import com.example.cento.wineyardapp.DB.SQLhelper;
 
 public class OrientationDataSource {
 
-    private SQLiteDatabase db;
-    private Context context;
+    private final SQLiteDatabase db;
 
     public OrientationDataSource(Context context){
         SQLhelper sqliteHelper = SQLhelper.getInstance(context);
         db = sqliteHelper.getWritableDatabase();
-        this.context = context;
     }
 
     /**
@@ -55,6 +53,7 @@ public class OrientationDataSource {
         orientation.setId(cursor.getInt(cursor.getColumnIndex(Contract.OrientationEntry.KEY_ID)));
         orientation.setName(cursor.getString(cursor.getColumnIndex(Contract.OrientationEntry.KEY_NAME)));
 
+        cursor.close();
         return orientation;
     }
 
@@ -62,7 +61,7 @@ public class OrientationDataSource {
      * Get all Orientations
      */
     public List<Orientation> getAllOrientations(){
-        List<Orientation> orientations = new ArrayList<Orientation>();
+        List<Orientation> orientations = new ArrayList<>();
         String sql = "SELECT * FROM " + Contract.OrientationEntry.TABLE_ORIENTATION + " ORDER BY " + Contract.OrientationEntry.KEY_NAME;
 
         Cursor cursor = this.db.rawQuery(sql, null);
@@ -77,6 +76,7 @@ public class OrientationDataSource {
             } while(cursor.moveToNext());
         }
 
+        cursor.close();
         return orientations;
     }
 
@@ -91,8 +91,7 @@ public class OrientationDataSource {
                 new String[] { String.valueOf(Orientation.getId()) });
     }
 
-    /**
-     * TODO
+    /*
      * Delete a Orientation - this will also delete all his Orientation ?????
      * for the Orientation
      */

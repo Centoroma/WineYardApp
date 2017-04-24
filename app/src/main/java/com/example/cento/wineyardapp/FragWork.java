@@ -12,8 +12,6 @@ import android.widget.ListView;
 
 import com.bof.navigationdrawerwineyard.R;
 
-import static android.R.attr.description;
-
 /**
  * Created by flavien on 19/04/17.
  */
@@ -39,7 +37,7 @@ public class FragWork extends Fragment {
 
         ListView listView = (ListView)view.findViewById(R.id.listofwork);
 
-        ArrayAdapter<String> listviewadapter = new ArrayAdapter<String>(
+        ArrayAdapter<String> listviewadapter = new ArrayAdapter<>(
                 getActivity(),
                 R.layout.doublelist,
                 R.id.action,

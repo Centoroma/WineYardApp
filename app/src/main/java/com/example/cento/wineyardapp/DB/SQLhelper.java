@@ -13,7 +13,7 @@ public class SQLhelper extends SQLiteOpenHelper{
     /**
      * Created by Cento on 19.04.2017.
      */
-        private SQLiteDatabase db;
+        private final SQLiteDatabase db;
 
         //Info about database
         private static final String DATABASE_NAME = "survey.db";
