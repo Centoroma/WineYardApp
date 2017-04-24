@@ -23,7 +23,7 @@ public class WorkAdapter extends ArrayAdapter<Job>{
 
         @Override
         public View getView(int position, View convertView, ViewGroup parent) {
-
+//
             if(convertView == null){
                 convertView = LayoutInflater.from(getContext()).inflate(R.layout.double_list,parent, false);
             }
