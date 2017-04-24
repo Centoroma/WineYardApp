@@ -36,7 +36,7 @@ public class FragEmployee extends Fragment {
 
         ArrayAdapter<String>listviewadapter = new ArrayAdapter<>(
                 getActivity(),
-                R.layout.myemployeelist,
+                R.layout.my_employee_list,
                 R.id.Itemname,
                 datasource
         );

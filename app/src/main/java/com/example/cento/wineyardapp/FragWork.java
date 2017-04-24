@@ -11,6 +11,11 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import com.bof.navigationdrawerwineyard.R;
+import com.example.cento.wineyardapp.DB.Object.Job;
+import com.example.cento.wineyardapp.DB.Object.Worker;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by flavien on 19/04/17.
@@ -30,21 +35,39 @@ public class FragWork extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.frag_work,container, false);
 
-        String[] action ={"Deminage",
-                "Forniquage",
-                "Flavienage",
-                "Centage"};
+        Worker worker = new Worker();
+        worker.setId(1);
+        worker.setFirstName("Luca");
+        worker.setLastName("Centofanti");
+        worker.setMail("lucacentofan@gmail.com");
+        worker.setPhone("0788129662");
+
+        Job job1 = new Job();
+        job1.setId(1);
+        job1.setWorker(worker);
+        job1.setDescription("Deminage");
+        job1.setDeadline("28.12.2017");
+        job1.setWinelotId(1);
+
+        Job job2 = new Job();
+        job2.setId(2);
+        job2.setWorker(worker);
+        job2.setDescription("Fait la vigne");
+        job2.setDeadline("28.12.2017");
+        job2.setWinelotId(1);
+
+        List<Job> jobs = new ArrayList<>();
+        jobs.add(job1);
+        jobs.add(job2);
 
         ListView listView = (ListView)view.findViewById(R.id.listofwork);
 
-        ArrayAdapter<String> listviewadapter = new ArrayAdapter<>(
+        WorkAdapter listViewAdapter = new WorkAdapter(
                 getActivity(),
-                R.layout.doublelist,
-                R.id.action,
-                action
+                jobs
         );
 
-        listView.setAdapter(listviewadapter);
+        listView.setAdapter(listViewAdapter);
         return view;
     }
 }

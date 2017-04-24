@@ -7,10 +7,9 @@ package com.example.cento.wineyardapp.DB.Object;
 public class Job {
     private int id;
     private int winelotId;
-    private int workerId;
+    private Worker worker;
     private String description;
     private String deadline;
-
 
     public int getWinelotId() {
         return winelotId;
@@ -20,12 +19,12 @@ public class Job {
         this.winelotId = winelotId;
     }
 
-    public int getWorkerId() {
-        return workerId;
+    public Worker getWorker() {
+        return worker;
     }
 
-    public void setWorkerId(int workerId) {
-        this.workerId = workerId;
+    public void setWorker(Worker worker) {
+        this.worker = worker;
     }
 
     public int getId() {
