@@ -12,12 +12,12 @@
             android:id="@+id/description"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:drawableLeft="@drawable/ic_contact"
+            android:drawableLeft="@drawable/ic_build"
             android:drawablePadding="16dp"
             android:paddingBottom="16dp"
             android:paddingLeft="16dp"
             android:paddingTop="20dp"
-            android:text="@string/name"
+            android:text="@string/action"
             tools:layout_editor_absoluteY="0dp"
             tools:layout_editor_absoluteX="8dp" />
 
@@ -26,12 +26,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
-            android:drawableLeft="@drawable/ic_phone"
+            android:drawableLeft="@drawable/ic_wineLotName"
             android:drawablePadding="16dp"
             android:paddingBottom="16dp"
             android:paddingLeft="16dp"
             android:paddingTop="16dp"
-            android:text="@string/phone"
+            android:text="@string/winelotname"
             tools:layout_editor_absoluteY="0dp"
             tools:layout_editor_absoluteX="8dp" />
 
@@ -40,12 +40,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
-            android:drawableLeft="@drawable/ic_mail"
+            android:drawableLeft="@drawable/ic_deadLine"
             android:drawablePadding="16dp"
             android:paddingBottom="16dp"
             android:paddingLeft="16dp"
             android:paddingTop="16dp"
-            android:text="@string/mail"
+            android:text="@string/deadline"
             tools:layout_editor_absoluteY="0dp"
             tools:layout_editor_absoluteX="8dp" />
 
@@ -54,12 +54,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
-            android:drawableLeft="@drawable/ic_mail"
+            android:drawableLeft="@drawable/ic_contact"
             android:drawablePadding="16dp"
             android:paddingBottom="16dp"
             android:paddingLeft="16dp"
             android:paddingTop="16dp"
-            android:text="@string/mail"
+            android:text="@string/workername"
             tools:layout_editor_absoluteY="0dp"
             tools:layout_editor_absoluteX="8dp" />
 

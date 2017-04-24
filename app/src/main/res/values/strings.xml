@@ -26,4 +26,8 @@
     <string name="name">name</string>
     <string name="phone">phone</string>
     <string name="mail">mail</string>
+    <string name="deadline">deadLine</string>
+    <string name="workername">workerName</string>
+    <string name="action">action</string>
+    <string name="winelotname">wineLotName</string>
 </resources>
